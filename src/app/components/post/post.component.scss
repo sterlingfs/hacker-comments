@@ -1,0 +1,54 @@
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+
+.post {
+  padding: 24px 0;
+  border-bottom: 1px solid black;
+
+  opacity: 1;
+
+  // animation: fadeIn 1000ms forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .user {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .karma {
+      font-size: 1em;
+      color: rgba($color: #000000, $alpha: 0.7);
+    }
+    .time {
+      font-size: 1em;
+      color: rgba($color: #000000, $alpha: 0.7);
+    }
+    .created {
+      font-size: 0.9em;
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+
+  .commentPreview {
+    border: 1px solid lightgray;
+    padding: 24px;
+    margin: 24px 0;
+  }
+}

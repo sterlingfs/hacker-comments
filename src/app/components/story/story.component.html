@@ -1,0 +1,28 @@
+<div class="story">
+  <div class="title">
+    <a class="link" href="{{ story?.url }}">{{ story?.title }}</a>
+
+    <a
+      class="linkId"
+      href="https://news.ycombinator.com/item?id={{ story?.id }}"
+    >
+      <!-- <mat-icon fontIcon="open_in_new" /> -->
+      {{ story?.id }}
+    </a>
+  </div>
+
+  <div class="byLine">
+    <div class="score">
+      <mat-icon fontIcon="thumb_up" style="font-size: 20px" />
+      <span>{{ story?.score }}</span>
+    </div>
+    <span>by</span>
+    <div class="user">{{ story?.user?.id }}</div>
+    <span>·</span>
+    <div class="karma">{{ story?.user?.karma }}</div>
+    <span>·</span>
+    <div class="time">
+      {{ story?.time ?? 0 * 1000 | date : "@h:mm:ss a" }}
+    </div>
+  </div>
+</div>

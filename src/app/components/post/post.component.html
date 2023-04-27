@@ -1,0 +1,51 @@
+<div class="post">
+  <div *ngIf="post">
+    <div class="header">
+      <div class="spaceBetween">
+        <div class="spaceBetween">
+          <div *ngIf="post.decoration">{{ post.decoration }}</div>
+          <div class="user">{{ post.by }}</div>
+          <span>·</span>
+          <div class="karma">{{ post.user?.karma }}</div>
+          <span>·</span>
+          <div class="time">{{ post.time * 1000 | date : "@h:mm:ss a" }}</div>
+        </div>
+        <div>{{ post.id }}</div>
+      </div>
+      <!-- <div class="time">{{ post.time * 1000 | date : "@h:mm:ss a" }}</div> -->
+
+      <!-- <div class="created" *ngIf="post.user?.created">
+        {{ post.user!.created * 1000 | date : "MMMM y" }}
+      </div> -->
+    </div>
+
+    <div class="parent">
+      <app-story
+        *ngIf="post.parentPost?.type === 'story'"
+        [story]="post.parentPost"
+      />
+
+      <div *ngIf="post.parentPost?.type === 'comment'" class="commentPreview">
+        <div class="header">
+          <div class="spaceBetween">
+            <div class="spaceBetween">
+              <div *ngIf="post.parentPost?.by === 'dang'">
+                {{ post.decoration }}
+              </div>
+              <div class="user">{{ post.parentPost?.by }}</div>
+              <span>·</span>
+              <div class="karma">{{ post.parentPost?.user?.karma }}</div>
+              <span>·</span>
+              <div class="time">
+                {{ post.parentPost?.time ?? 0 * 1000 | date : "@h:mm:ss a" }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div [innerHTML]="post.parentPost?.text"></div>
+      </div>
+
+      <div [innerHTML]="post.text"></div>
+    </div>
+  </div>
+</div>
