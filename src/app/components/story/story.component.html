@@ -1,22 +1,20 @@
 <div class="story">
   <div class="title">
-    <a class="link" href="{{ story?.url }}">{{ story?.title }}</a>
+    <span class="headLine">
+      <a class="link" href="{{ story?.url }}">{{ story?.title }}</a>
+    </span>
 
-    <a
-      class="linkId"
-      href="https://news.ycombinator.com/item?id={{ story?.id }}"
-    >
-      <!-- <mat-icon fontIcon="open_in_new" /> -->
+    <a href="https://news.ycombinator.com/item?id={{ story?.id }}">
       {{ story?.id }}
     </a>
   </div>
 
   <div class="byLine">
-    <div class="score">
-      <mat-icon fontIcon="thumb_up" style="font-size: 20px" />
-      <span>{{ story?.score }}</span>
-    </div>
-    <span>by</span>
+    <!-- <mat-icon fontIcon="thumb_up" style="font-size: 20px" /> -->
+    <!-- <div class="score"></div> -->
+    <!-- <span>{{ story?.score }}</span> -->
+    <!-- <span>·</span> -->
+
     <div class="user">{{ story?.user?.id }}</div>
     <span>·</span>
     <div class="karma">{{ story?.user?.karma }}</div>

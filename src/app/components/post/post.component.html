@@ -10,7 +10,13 @@
           <span>·</span>
           <div class="time">{{ post.time * 1000 | date : "@h:mm:ss a" }}</div>
         </div>
-        <div>{{ post.id }}</div>
+
+        <a
+          class="linkId"
+          href="https://news.ycombinator.com/item?id={{ post.id }}"
+        >
+          {{ post.id }}
+        </a>
       </div>
       <!-- <div class="time">{{ post.time * 1000 | date : "@h:mm:ss a" }}</div> -->
 
